@@ -6,12 +6,7 @@ const { MongoClient, ServerApiVersion, ObjectId } = require("mongodb");
 const app = express();
 const port = process.env.port || 5000;
 
-app.use(
-  cors({
-    origin: ["http://localhost:5173", "https://tourist-trust.web.app/"],
-    credentials: true,
-  })
-);
+app.use(cors());
 app.use(express.json());
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 console.log(process.env.MONGO_URL);
